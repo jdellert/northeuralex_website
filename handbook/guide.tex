@@ -1,0 +1,112 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[margin=2.5cm]{geometry}
+
+\title{\textbf{System Administration Handbook for NorthEuraLex}}
+\author{
+\date{March 2019}
+}
+\begin{document}
+
+\maketitle
+
+\section{Accessing the servers}
+
+There are a few different servers for which the system administrator is responsible:
+
+\begin{enumerate}
+\item Satie
+\begin{itemize}
+\item Main entry point for the Xen bridge
+\end{itemize}
+\item Wagner
+\item WWW2 (Vivaldi)
+\item WWW2 (Vivaldi) Database
+\item Beethoven
+\item Strauss
+\item Haendel
+\item Haendel Fileserver
+\item Haendel Mysql
+\item Scarlatti
+\end{enumerate}
+
+\noindent
+In order to access all servers except Satie, you need to specify the port of entry:
+
+\begin{verbatim}
+    $ ssh -p 77 [username]@[servername].sfs.uni-tuebingen.de
+\end{verbatim}
+
+\section{Backups}
+
+The following servers have automatic backups scheduled that should be cleared regularly:
+
+\begin{enumerate}
+
+\item Wagner
+\begin{itemize}
+\item Automatically purged after available disk space falls below 5GB
+\end{itemize}
+
+\item Haendel
+\item Beethoven
+\item WWW2 (Vivaldi)
+\item Scarlatti
+
+\end{enumerate}
+
+
+
+\section{Scheduled tasks}
+
+There are some scheduled tasks on Wagner, specifically the backup and cleanup scripts, that can only be accessed by first switching to root.
+
+\begin{verbatim}
+    $ sudo su        // switch to root
+    $ crontab -e     // display scheduled tasks
+\end{verbatim}
+
+
+
+\section{Display problems}
+
+https://unix.stackexchange.com/questions/292042/how-to-fix-shell-prompt-ps1-odd-escape-sequences-after-remote-login-from-ite \\
+
+\noindent
+https://askubuntu.com/questions/846627/weird-character-appeaaring-when-connecting-another-server-over-ssh-on-ubuntu-16 \\
+
+\noindent
+https://www.iterm2.com/documentation-shell-integration.html
+
+\section{SVN accounts}
+
+When a new Subversion account is needed, you should first generate a secure password by using the \verb|pwgen| command:
+
+\begin{verbatim}
+    $ pwgen
+\end{verbatim}
+
+\noindent
+Then, simply navigate to:
+
+\begin{verbatim}
+    $ cd /var/local/svn/svn.wagner.sfs.uni-tuebingen.de/conf
+\end{verbatim}
+
+\noindent
+and modify the \verb|passwd| file, followed by the secure password from \verb|pwgen|:
+
+\begin{verbatim} 
+    $ htpasswd -m passwd [username]
+\end{verbatim}
+
+\noindent
+Finally, add the new username to the list of authorized users in the \verb|authz| file, at the end of "svngroup" line:
+
+\begin{verbatim}
+    $ nano authz
+\end{verbatim}
+
+\noindent
+If you wish to remove a user's access, simply remove their username from the "svngroup" line, and add it to "removed users" for bookkeeping.
+
+\end{document}
