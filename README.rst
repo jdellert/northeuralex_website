@@ -10,7 +10,8 @@ setup
 =====
 
 ::
-    
+    This update is intended for use with Python3.7
+
     # clone this repository
     git clone https://github.com/evolaemp/northeuralex_website
     cd northeuralex_website
@@ -20,8 +21,11 @@ setup
     pyvenv path/to/my/venv
     source path/to/my/venv/bin/activate
 
+    # install wheel to asist in installing dependencies
     # install the dependencies (there are quite a few of these)
     # it is important to use the versions specified in the requirements file
+    # requirements.txt has been updated for Python3.7
+    pip install wheel
     pip install -r requirements.txt
 
     # clld wants its projects to be python packages, so you have to register
