@@ -64,15 +64,14 @@
 		and are therefore guaranteed to contain many errors and inaccuracies.
 		Therefore, they are not adequate for use as a primary reference or data source for any of the languages concerned,
 		but only in computational frameworks where some noise can be dealt with.
-		The next version (planned for spring 2018) is projected to contain additional languages,
-		as well as many updates and corrections based on the feedback of experts and native speakers.
+		The next major version (planned for autumn 2020) will contain at least 80 additional languages, a first batch of etymological 			annotations for the larger families, as well as many updates and corrections based on the feedback of experts and native 			speakers.
 	</p>
 </div>
 
 <div class="well">
 	<h3>How to cite the dataset</h3>
 	<p>
-		Johannes Dellert and Gerhard Jäger (eds.). 2017. NorthEuraLex
+		Dellert, J., Daneyko, T., Münch, A. et al. Lang Resources & Evaluation (2019). https://doi.org/10.1007/s10579-019-09480-6
 		(version 0.9).
 	</p>
 </div>
