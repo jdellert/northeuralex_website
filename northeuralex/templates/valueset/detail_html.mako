@@ -71,7 +71,7 @@
 <div class="well">
 	<h3>How to cite the dataset</h3>
 	<p>
-		Dellert, J., Daneyko, T., Münch, A. et al. Lang Resources & Evaluation (2019). https://doi.org/10.1007/s10579-019-09480-6
+		Dellert, J., Daneyko, T., Münch, A. et al. (2019): NorthEuraLex: a wide-coverage lexical database of Northern Eurasia. Language Resources & Evaluation. https://doi.org/10.1007/s10579-019-09480-6
 		(version 0.9).
 	</p>
 </div>
